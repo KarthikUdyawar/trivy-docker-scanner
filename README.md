@@ -1,6 +1,6 @@
 # Trivy Docker Image Scanner
 
-[![CI](https://github.com/<your-user>/trivy-docker-scanner/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-user>/trivy-docker-scanner/actions/workflows/ci.yml)
+[![CI](https://github.com/KarthikUdyawar/trivy-docker-scanner/actions/workflows/ci.yml/badge.svg)](https://github.com/KarthikUdyawar/trivy-docker-scanner/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A simple and practical personal repository for scanning Docker images using **Aqua Security Trivy** via Docker Compose.
