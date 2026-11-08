@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ShellCheck
+        run: shellcheck scripts/scan.sh
+      - name: Validate compose file
+        run: docker compose config -q
+
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan a small image (JSON)
+        run: make scan-json IMAGE=alpine:3.19
+      - name: Check report exists
+        run: test -s reports/trivy-report.json

@@ -1,0 +1,16 @@
+name: trivy-docker-scanner
+
+services:
+  trivy:
+    image: aquasec/trivy:${TRIVY_VERSION:-0.58.0}
+    environment:
+      - TRIVY_USERNAME
+      - TRIVY_PASSWORD
+      - TRIVY_NO_PROGRESS=true
+    volumes:
+      - trivy-cache:/root/.cache/
+      - ./reports:/reports
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+volumes:
+  trivy-cache:
